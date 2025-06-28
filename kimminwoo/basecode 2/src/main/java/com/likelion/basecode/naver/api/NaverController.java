@@ -17,7 +17,7 @@ public class NaverController {
     private final NaverService naverService;
 
     @GetMapping("/recommendations")
-    public ApiResTemplate<NaverListResponseDto> recommendBooks(@RequestParam Long postId) {
+    public ApiResTemplate<NaverListResponseDto> searchBlogsByPostId(@RequestParam Long postId) {
         NaverListResponseDto naverListResponseDto = naverService.searchBlogsByPostId(postId);
         return ApiResTemplate.successResponse(SuccessCode.GET_SUCCESS, naverListResponseDto);
     }
